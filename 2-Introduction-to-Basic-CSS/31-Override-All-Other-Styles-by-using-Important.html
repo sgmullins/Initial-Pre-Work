@@ -1,0 +1,19 @@
+<!-- Learned that you can override every style by using !important in the style you need to display. It should be rare to use it but may be needed when using a CSS library that overrides your style  -->
+
+<style>
+    body {
+      background-color: black;
+      font-family: monospace;
+      color: green;
+    }
+    #orange-text {
+      color: orange;
+    }
+    .pink-text {
+      color: pink !important;
+    }
+    .blue-text {
+      color: blue;
+    }
+  </style>
+  <h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
