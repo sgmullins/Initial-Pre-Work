@@ -1,0 +1,177 @@
+:root {
+    --red: #d25a58;
+    --blue: #72c5d3;
+    --brightBlue: #62d8e0;
+}
+
+/* Base HTML styling */
+html {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: rgb(56, 55, 55);
+}
+
+body {
+    background-image: url("../images/topography.svg");
+    background-color: grey;
+    background-size: 600px, auto;
+    min-height: calc(100vh - 100px);
+    margin: 0;
+    background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 2.5rem;
+}
+
+/* Main layout */
+.container {
+    display: grid;
+    /* grid-template-columns: 1fr 1.5fr; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header"
+        "image1 about about"
+        "training training image2"
+        "image3 climbs climbs"
+        "footer footer footer";
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    background-color: rgb(249, 249, 250);
+}
+
+.header {
+    grid-area: header;
+    justify-items: center;
+}
+
+.about {
+    grid-area: about;
+}
+
+.section-text {
+    text-align: center;
+}
+
+.text-left-offset {
+    text-align: left;
+    color: #62d8e0;
+    font-size: 2rem;
+}
+
+.text-right-offset {
+    text-align: right;
+    color: var(--blue);
+    font-size: 2rem;
+}
+
+.info {
+    text-align: center;
+    text-align-last: center;
+    margin-left: 50px;
+    padding: 15px;
+}
+
+.training {
+    grid-area: training;
+}
+
+.climbs {
+    grid-area: climbs;
+}
+
+.image1 {
+    grid-area: image1;
+
+}
+
+.image2 {
+    grid-area: image2;
+
+}
+
+.image3 {
+    grid-area: image3;
+
+}
+
+.footer {
+    grid-area: footer;
+
+}
+
+.zig-zag {
+    border: none;
+    width: 100%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 20px;
+    background: linear-gradient(135deg, rgb(249, 249, 250) 25%, transparent 25%) -10px 0,
+        linear-gradient(225deg, rgb(249, 249, 250) 25%, transparent 25%) -10px 0,
+        linear-gradient(315deg, rgb(249, 249, 250) 25%, transparent 25%),
+        linear-gradient(45deg, rgb(249, 249, 250) 25%, transparent 25%);
+    background-size: 20px 20px;
+    background-color: #EC173A;
+}
+
+a {
+    color: rgb(56, 55, 55);
+    text-decoration: none;
+    background-color: none;
+    padding: 5px 0;
+}
+
+a:hover {
+    color: #f82522;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+    padding-left: 40%;
+    margin-top: 0;
+}
+
+
+/* testing grounds */
+a.slide {
+    cursor: text;
+    background:
+        linear-gradient(to bottom, var(--blue) 0%,
+            var(--blue) 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 4px;
+    color: rgb(56, 55, 55);
+    text-decoration: none;
+    transition: background-size .2s;
+    /*  */
+}
+
+a.slide:hover {
+    background-size: 4px 50px;
+}
+
+/* Main image styling */
+img {
+    width: 100%;
+    height: 500px;
+}
