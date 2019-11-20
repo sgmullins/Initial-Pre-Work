@@ -10,6 +10,7 @@ html {
     font-weight: 900;
     font-size: 1rem;
     color: rgb(56, 55, 55);
+    scroll-behavior: smooth;
 }
 
 p,
@@ -78,6 +79,7 @@ nav ul {
     margin: 5px 0 0 0;
     background: whitesmoke;
     margin-bottom: 0;
+    list-style: none;
 }
 
 
@@ -118,9 +120,6 @@ nav ul {
 
 
 .info-left {
-    /* text-align: center;
-    text-align-last: center;
-    margin-left: 50px; */
     text-align: left;
     padding: 15px;
     margin: 0 50px 0 15px;
@@ -173,7 +172,8 @@ nav ul {
 
 .footer {
     grid-area: footer;
-
+    display: flex;
+    background: whitesmoke;
 }
 
 hr.red-line {
@@ -196,7 +196,7 @@ a.climb-list:hover {
     transition: 0.2s;
 }
 
-ul {
+.climb-list {
     list-style: none;
     text-align: left;
     padding-left: 40%;
@@ -204,7 +204,7 @@ ul {
 }
 
 
-/* testing grounds */
+/* Color Slide effects borrowed from https://css-tricks.com/having-fun-with-link-hover-effects/ */
 a.slide {
     cursor: text;
     background:
@@ -223,7 +223,7 @@ a.slide:hover {
 }
 
 span.slide {
-    cursor: text;
+    cursor: pointer;
     background:
         linear-gradient(to bottom, var(--red) 0%,
             var(--red) 100%);
@@ -301,3 +301,33 @@ span:hover:after {
     width: 100%;
     transition: 0s;
 } */
+
+/* ul .copyright {
+    margin-left: 25%
+}
+
+.footerUl {
+    list-style: none;
+} */
+
+.contacts {
+    list-style: none;
+    font-size: .8em;
+}
+
+.faContacts {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .icons {
+    color: rgb(56, 55, 55);
+    font-size: 1em;
+    padding: 2px;
+} */
+
+i.fab {
+    color: rgb(56, 55, 55);
+    font-size: 1.5em;
+    padding: 4px;
+}

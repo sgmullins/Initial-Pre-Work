@@ -8,6 +8,8 @@
     <title>Wolfgang G&#252;llich, A Bio</title>
     <link rel="stylesheet" href="./CSS/index.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/37ccc5b7d8.js" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -15,14 +17,14 @@
     <div class="container">
         <nav>
             <ul class="navUL">
-                <li><a href="#"><span class="slide">About</span></a></li>
-                <li><a href="#"><span class="slide">Training</span></a></li>
-                <li><a href="#"><span class="slide">Climbs</span></a></li>
-                <li><a href="#"><span class="slide">More</span></a></li>
+                <li><a href="#aboutNav"><span class="slide">About</span></a></li>
+                <li><a href="#trainingNav"><span class="slide">Training</span></a></li>
+                <li><a href="#climbsNav"><span class="slide">Climbs</span></a></li>
+                <li><a href="#footerNav"><span class="slide">More</span></a></li>
             </ul>
         </nav>
         <header class="item header">
-            <img class="image" src="./images/wolfgang.png" alt="">
+            <img class="image" src="./images/wolfgangv3.png" alt="">
         </header>
         <div class="hr hr1">
             <hr class="red-line">
@@ -31,7 +33,7 @@
         <div class="item image1">
             <img class="image" src="./images/stripesEnhanced.jpg" alt="Wolfgang wearing iconic bright lycra">
         </div>
-        <section class="item about">
+        <section class="item about" id="aboutNav">
 
             <div class="section-text">
                 <h3>Hello. This is <a class="slide" href="#"> Wolfgang</a></h3>
@@ -63,7 +65,7 @@
             <img class="image" src="./images/monoBoardEnhanced.jpg"
                 alt="Wolfgang demonstrating campus board with one finger">
         </div>
-        <section class="item training">
+        <section class="item training" id="trainingNav">
             <div class="section-text">
                 <h3>Impact on <a class="slide" href="#">Training</a></h3>
                 <p class="text-right-offset">power.power.power.</p>
@@ -97,7 +99,7 @@
         <div class="item image3"> <img class="image" src="./images/actionEnhanced.jpg"
                 alt="Wolfgang climbing Action Directe"></div>
 
-        <section class="item climbs">
+        <section class="item climbs" id="climbsNav">
             <div class="item section-text">
                 <h3>Notable <a class="slide" href="#">Ascents</a></h3>
                 <p class="text-left-offset">frankenjura.austria.yosemite.</p>
@@ -110,21 +112,33 @@
                     and free solos. Some
                     of his top climbs included:
                 </p>
-                <ul>
-                    <li> <a class="climb-list" href="#">Kanal im Rücken 8b</a></li>
-                    <li> <a class="climb-list" href="#">Punks in the Gym 8b+</a></li>
-                    <li> <a class="climb-list" href="#">Wallstreet 8c</a></li>
-                    <li> <a class="climb-list" href="#">Action Directe 9a</a></li>
-                    <li> <a class="climb-list" href="#">Separate Reality (first free solo)</a></li>
+                <ul class="climb-list">
+                    <li> <a href="#"><span class="slide">Punks in the Gym 8b+</span></a></li>
+                    <li> <a href="#"><span class="slide">Kanal im Rücken 8b</span></a></li>
+                    <li> <a href="#"><span class="slide">Wallstreet 8c</span></a></li>
+                    <li> <a href="#"><span class="slide">Action Directe 9a</span></a></li>
+                    <li> <a href="#"><span class="slide">Separate Reality (first free solo)</span></a></li>
                 </ul>
             </div>
         </section>
         <div class="hr hr4">
             <hr class="red-line">
         </div>
-        <footer class="item footer">
-            <p>Find out more: <a href="www.youtube.com">YouTube</a>
-                <a href="www.wikipedia.org">Wiki</a></p>
+        <footer class="footer" id="footerNav">
+            <ul class="contacts">
+                <li>©Steve Mullins 2019 | Inspiration/CodeSnippets/LearningModules gleaned from <a
+                        href="https://css-tricks.com/having-fun-with-link-hover-effects/" target="_blank"><span
+                            class="slide">CSS-Tricks</span></a>, <a href="https://cssgrid.io/" target="_blank"><span
+                            class="slide">WesBos</span></a>, <a
+                        href="https://en.wikipedia.org/wiki/Wolfgang_G%C3%BCllich" target="_blank"><span
+                            class="slide">Wikipedia</span></a> and <a
+                        href="http://gullich.weebly.com/wolfgang-gullich-biography.html" target="_blank"><span
+                            class="slide">WGTeam</span></a></li>
+                <li class="faContacts"><span class="icons"><a href="https://github.com/sgmullins" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/steve-mullins-8b8782192/" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a></span></li>
+            </ul>
 
         </footer>
     </div>
