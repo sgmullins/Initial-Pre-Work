@@ -1,5 +1,5 @@
 :root {
-    --red: #d25a58;
+    --red: #d25a5a;
     --blue: #72c5d3;
     --brightBlue: #62d8e0;
 }
@@ -10,6 +10,13 @@ html {
     font-weight: 900;
     font-size: 1rem;
     color: rgb(56, 55, 55);
+}
+
+p,
+ul {
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    font-weight: 400;
 }
 
 body {
@@ -24,10 +31,10 @@ body {
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
     font-size: 2.5rem;
+    margin: 10px 0;
+    text-align: center;
 }
 
 /* Main layout */
@@ -37,13 +44,18 @@ h6 {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-template-areas:
+        "nav nav nav"
         "header header header"
+        "hr1 hr1 hr1"
         "image1 about about"
+        "hr2 hr2 hr2"
         "training training image2"
+        "hr3 hr3 hr3"
         "image3 climbs climbs"
+        "hr4 hr4 hr4"
         "footer footer footer";
     max-width: 1000px;
-    height: 100%;
+    /* height: 100%; */
     margin: 0 auto;
 }
 
@@ -51,40 +63,89 @@ h6 {
     display: grid;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid black; */
-    background-color: rgb(249, 249, 250);
+    background-color: whitesmoke;
 }
+
+nav {
+    grid-area: nav;
+
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 5px 0 0 0;
+    background: whitesmoke;
+    margin-bottom: 0;
+}
+
 
 .header {
     grid-area: header;
     justify-items: center;
+    padding-top: 10px;
 }
 
 .about {
     grid-area: about;
 }
 
-.section-text {
-    text-align: center;
-}
-
 .text-left-offset {
     text-align: left;
-    color: #62d8e0;
+    color: var(--blue);
     font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
 }
 
 .text-right-offset {
     text-align: right;
     color: var(--blue);
     font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
 }
 
-.info {
-    text-align: center;
-    text-align-last: center;
+.info-right {
+    text-align: left;
     margin-left: 50px;
     padding: 15px;
+    padding-right: 5px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+.info-left {
+    /* text-align: center;
+    text-align-last: center;
+    margin-left: 50px; */
+    text-align: left;
+    padding: 15px;
+    margin: 0 50px 0 15px;
+}
+
+
+.hr {
+    background: whitesmoke;
+    padding: 8px 0;
+}
+
+.hr1 {
+    grid-area: hr1;
+}
+
+.hr2 {
+    grid-area: hr2;
+}
+
+.hr3 {
+    grid-area: hr3;
+}
+
+.hr4 {
+    grid-area: hr4;
 }
 
 .training {
@@ -115,19 +176,11 @@ h6 {
 
 }
 
-.zig-zag {
-    border: none;
-    width: 100%;
-    margin: auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    height: 20px;
-    background: linear-gradient(135deg, rgb(249, 249, 250) 25%, transparent 25%) -10px 0,
-        linear-gradient(225deg, rgb(249, 249, 250) 25%, transparent 25%) -10px 0,
-        linear-gradient(315deg, rgb(249, 249, 250) 25%, transparent 25%),
-        linear-gradient(45deg, rgb(249, 249, 250) 25%, transparent 25%);
-    background-size: 20px 20px;
-    background-color: #EC173A;
+hr.red-line {
+    margin: 0;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(210, 90, 90, 0), rgba(210, 90, 90, 0.75), rgba(210, 90, 90, 0));
 }
 
 a {
@@ -137,8 +190,8 @@ a {
     padding: 5px 0;
 }
 
-a:hover {
-    color: #f82522;
+a.climb-list:hover {
+    color: var(--red);
     text-decoration: none;
     transition: 0.2s;
 }
@@ -163,15 +216,88 @@ a.slide {
     color: rgb(56, 55, 55);
     text-decoration: none;
     transition: background-size .2s;
-    /*  */
 }
 
 a.slide:hover {
     background-size: 4px 50px;
 }
 
+span.slide {
+    cursor: text;
+    background:
+        linear-gradient(to bottom, var(--red) 0%,
+            var(--red) 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    color: rgb(56, 55, 55);
+    text-decoration: none;
+    transition: background-size .5s;
+}
+
+span.slide:hover {
+    background-size: 4px 50px;
+}
+
+a.para {
+    text-decoration: none;
+    color: rgb(56, 55, 55);
+    border-bottom: 4px solid var(--blue);
+    padding-bottom: 0;
+}
+
+
 /* Main image styling */
 img {
+    object-fit: cover;
     width: 100%;
-    height: 500px;
+    max-width: 100%;
+    /* max-width: 100%;
+    height: auto; */
+    /* need to set a min height and max height for the grid response later */
 }
+
+/* Nav experiment */
+/* li {
+    display: inline-block;
+    padding: 0 20px;
+} */
+/* cool strikeout animation borrowed from https://codepen.io/tsimenis/pen/BKdENX */
+/* span {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+span:before,
+span:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 5px;
+    top: 50%;
+    margin-top: -0.5px;
+    background: #d25a58ab;
+}
+
+span:before {
+    left: -2.5px;
+}
+
+span:after {
+    right: 2.5px;
+    background: #d25a58ab;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+span:hover:before {
+    background: #d25a58ab;
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+span:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+} */
