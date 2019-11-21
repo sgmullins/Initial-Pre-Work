@@ -1,15 +1,17 @@
+/*---- Reusable color vars ----*/
 :root {
     --red: #d25a5a;
     --blue: #72c5d3;
-    --brightBlue: #62d8e0;
+    --greyFont: #383737;
 }
 
-/* Base HTML styling */
+
+/*---- Base HTML styling ----*/
 html {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-size: 1rem;
-    color: rgb(56, 55, 55);
+    color: var(--greyFont);
     scroll-behavior: smooth;
 }
 
@@ -18,13 +20,14 @@ ul {
     line-height: 1.8;
     letter-spacing: 0.02em;
     font-weight: 400;
+    margin: 10px 0;
+    text-align: center;
 }
 
 body {
     background-image: url("../images/topography.svg");
     background-color: grey;
     background-size: 600px, auto;
-    min-height: calc(100vh - 100px);
     margin: 0;
     background-attachment: fixed;
 }
@@ -38,10 +41,22 @@ h4 {
     text-align: center;
 }
 
-/* Main layout */
+a {
+    color: var(--greyFont);
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/*---- Main layout ----*/
 .container {
     display: grid;
-    /* grid-template-columns: 1fr 1.5fr; */
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-template-areas:
@@ -56,32 +71,15 @@ h4 {
         "hr4 hr4 hr4"
         "footer footer footer";
     max-width: 1000px;
-    /* height: 100%; */
     margin: 0 auto;
+    background: whitesmoke;
 }
 
-.item {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-color: whitesmoke;
-}
 
+/*---- Grid Layout ----*/
 nav {
     grid-area: nav;
-
 }
-
-nav ul {
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-    margin: 5px 0 0 0;
-    background: whitesmoke;
-    margin-bottom: 0;
-    list-style: none;
-}
-
 
 .header {
     grid-area: header;
@@ -89,8 +87,67 @@ nav ul {
     padding-top: 10px;
 }
 
+.hr1 {
+    grid-area: hr1;
+}
+
+.hr2 {
+    grid-area: hr2;
+}
+
+.hr3 {
+    grid-area: hr3;
+}
+
+.hr4 {
+    grid-area: hr4;
+}
+
 .about {
     grid-area: about;
+}
+
+.training {
+    grid-area: training;
+}
+
+.climbs {
+    grid-area: climbs;
+}
+
+.image1 {
+    grid-area: image1;
+}
+
+.image2 {
+    grid-area: image2;
+}
+
+.image3 {
+    grid-area: image3;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*---- Main class styling ----*/
+.item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 5px 0 0 0;
+    margin-bottom: 0;
+    list-style: none;
 }
 
 .text-left-offset {
@@ -111,13 +168,10 @@ nav ul {
 
 .info-right {
     text-align: left;
-    margin-left: 50px;
+    margin: 0 0 0 50px;
     padding: 15px;
     padding-right: 5px;
-    margin-bottom: 0px;
-    margin-top: 0px;
 }
-
 
 .info-left {
     text-align: left;
@@ -125,55 +179,8 @@ nav ul {
     margin: 0 50px 0 15px;
 }
 
-
 .hr {
-    background: whitesmoke;
     padding: 8px 0;
-}
-
-.hr1 {
-    grid-area: hr1;
-}
-
-.hr2 {
-    grid-area: hr2;
-}
-
-.hr3 {
-    grid-area: hr3;
-}
-
-.hr4 {
-    grid-area: hr4;
-}
-
-.training {
-    grid-area: training;
-}
-
-.climbs {
-    grid-area: climbs;
-}
-
-.image1 {
-    grid-area: image1;
-
-}
-
-.image2 {
-    grid-area: image2;
-
-}
-
-.image3 {
-    grid-area: image3;
-
-}
-
-.footer {
-    grid-area: footer;
-    display: flex;
-    background: whitesmoke;
 }
 
 hr.red-line {
@@ -183,28 +190,32 @@ hr.red-line {
     background-image: linear-gradient(to right, rgba(210, 90, 90, 0), rgba(210, 90, 90, 0.75), rgba(210, 90, 90, 0));
 }
 
-a {
-    color: rgb(56, 55, 55);
-    text-decoration: none;
-    background-color: none;
-    padding: 5px 0;
-}
-
-a.climb-list:hover {
-    color: var(--red);
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.climb-list {
+.climb-list ul {
     list-style: none;
     text-align: left;
     padding-left: 40%;
     margin-top: 0;
 }
 
+.contacts ul {
+    list-style: none;
+    font-size: .8em;
+    padding: 10px;
+}
 
-/* Color Slide effects borrowed from https://css-tricks.com/having-fun-with-link-hover-effects/ */
+.faContacts {
+    display: flex;
+    flex-direction: column;
+}
+
+i.fab {
+    color: var(--greyFont);
+    font-size: 1.5em;
+    padding: 4px;
+}
+
+
+/*---- Color Slide effects borrowed from https://css-tricks.com/having-fun-with-link-hover-effects/ ----*/
 a.slide {
     cursor: text;
     background:
@@ -213,7 +224,6 @@ a.slide {
     background-position: 0 100%;
     background-repeat: repeat-x;
     background-size: 4px 4px;
-    color: rgb(56, 55, 55);
     text-decoration: none;
     transition: background-size .2s;
 }
@@ -230,7 +240,7 @@ span.slide {
     background-position: 0 100%;
     background-repeat: repeat-x;
     background-size: 1px 1px;
-    color: rgb(56, 55, 55);
+    color: var(--greyFont);
     text-decoration: none;
     transition: background-size .5s;
 }
@@ -241,93 +251,75 @@ span.slide:hover {
 
 a.para {
     text-decoration: none;
-    color: rgb(56, 55, 55);
     border-bottom: 4px solid var(--blue);
     padding-bottom: 0;
 }
 
 
-/* Main image styling */
-img {
-    object-fit: cover;
-    width: 100%;
-    max-width: 100%;
-    /* max-width: 100%;
-    height: auto; */
-    /* need to set a min height and max height for the grid response later */
+/*---- Media Queries ----*/
+@media (max-width: 700px) {
+    .container {
+        grid-template-areas:
+            "nav nav"
+            "header header"
+            "hr1 hr1"
+            "image1 about"
+            "hr2 hr2"
+            "training image2"
+            "hr3 hr3"
+            "image3 climbs"
+            "hr4 hr4"
+            "footer footer";
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Nav experiment */
-/* li {
-    display: inline-block;
-    padding: 0 20px;
-} */
-/* cool strikeout animation borrowed from https://codepen.io/tsimenis/pen/BKdENX */
-/* span {
-    position: relative;
-    display: block;
-    cursor: pointer;
-}
+@media (max-width: 500px) {
+    .container {
+        grid-template-areas:
+            "nav "
+            "header"
+            "hr1"
+            "about"
+            "hr2"
+            "training"
+            "hr3"
+            "climbs"
+            "hr4"
+            "footer";
+        grid-template-columns: 100%;
+    }
 
-span:before,
-span:after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 5px;
-    top: 50%;
-    margin-top: -0.5px;
-    background: #d25a58ab;
-}
+    .text-left-offset {
+        text-align: center;
+        color: var(--blue);
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 10px 0;
+    }
 
-span:before {
-    left: -2.5px;
-}
+    .text-right-offset {
+        text-align: center;
+        color: var(--blue);
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 10px 0;
+    }
 
-span:after {
-    right: 2.5px;
-    background: #d25a58ab;
-    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
+    .info-left {
+        text-align: center;
+        margin: 10px;
+    }
 
-span:hover:before {
-    background: #d25a58ab;
-    width: 100%;
-    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
+    .info-right {
+        text-align: center;
+        margin: 10px;
+    }
 
-span:hover:after {
-    background: transparent;
-    width: 100%;
-    transition: 0s;
-} */
-
-/* ul .copyright {
-    margin-left: 25%
-}
-
-.footerUl {
-    list-style: none;
-} */
-
-.contacts {
-    list-style: none;
-    font-size: .8em;
-}
-
-.faContacts {
-    display: flex;
-    flex-direction: column;
-}
-
-/* .icons {
-    color: rgb(56, 55, 55);
-    font-size: 1em;
-    padding: 2px;
-} */
-
-i.fab {
-    color: rgb(56, 55, 55);
-    font-size: 1.5em;
-    padding: 4px;
+    .climb-list {
+        list-style: none;
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+    }
 }
